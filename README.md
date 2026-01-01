@@ -1,11 +1,26 @@
 # Data Structures & Algorithms (Python)
 
-This repository contains my implementations of classical data structures and algorithms in Python.
-The goal of this project is to practice computer science fundamentals, clean code principles, and unit testing.
+[![CI Status](https://github.com/mykytakuzminov/data-structures-and-algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/mykytakuzminov/data-structures-and-algorithms/actions)
+![Python Version](https://img.shields.io/badge/python-3.14-blue.svg)
+![Tests: Pytest](https://img.shields.io/badge/tests-pytest-white.svg?logo=pytest&logoColor=white&labelColor=0a9edc)
+![Types: MyPy](https://img.shields.io/badge/types-mypy-blue.svg?labelColor=2f4f4f)
+![Automation: Tox](https://img.shields.io/badge/automation-tox-white.svg?logo=python&logoColor=white&labelColor=ce3262)
+![Linting: Ruff](https://img.shields.io/badge/linting-ruff-000000.svg?logo=python&logoColor=white)
 
-## 📂 Features
+## 📝 Overview
 
-All implementations are fully typed (using `typing`) and tested with `pytest`.
+This repository is a high-standard educational ecosystem dedicated to the implementation of classical data structures and algorithms. The project emphasizes **modern software engineering practices**, including strict type safety, comprehensive automation, and clean code architecture.
+
+## 🛠 Engineering Stack
+
+* **[Python 3.14](https://www.python.org/)**: Core language utilizing the latest features and performance improvements.
+* **[Pytest](https://docs.pytest.org/)**: Advanced unit testing with heavy use of parametrization.
+* **[MyPy](http://mypy-lang.org/)**: Strict static type checking to enforce architectural integrity.
+* **[Ruff](https://github.com/astral-sh/ruff)**: Ultra-fast linter and formatter for PEP 8 compliance.
+* **[Tox](https://tox.wiki/)**: Multi-environment orchestration for consistent testing.
+* **GitHub Actions**: CI/CD pipeline validating every commit and pull request.
+
+## 🏗 Implementations
 
 ### Data Structures
 - [x] **Stack** (LIFO)
@@ -18,58 +33,97 @@ All implementations are fully typed (using `typing`) and tested with `pytest`.
 
 ### Algorithms
 - [x] **Binary Search** (Generic implementation)
-- [x] **Recursion** (Factorial, Fibonacci, Sums)
-- [x] **Sorting** (Bubble, Insertion, Selection, Merge, Quick, Counting)
+- [x] **Recursion** (Factorial, Fibonacci, Nested Sums)
+- [x] **Sorting**
+    - [x] *Simple*: Bubble, Insertion, Selection
+    - [x] *Efficient*: Merge Sort, Quick Sort
+    - [x] *Non-Comparison*: Counting Sort
 
----
+## ⚙️ Development Setup
 
-## 🛠️ Development & Testing
+Follow these steps to set up the project locally for development and testing. These instructions cover **macOS**, **Linux**, and **Windows**.
 
-This project maintains high code quality standards using strict linting, static type checking, and comprehensive testing via **Tox**.
+### 1. Clone & Environment Setup
 
-### 1. Environment Setup
-
-It is recommended to use a virtual environment for development to keep dependencies isolated.
+Start by cloning the repository to your local machine and navigating into the project directory.
 
 ```bash
-# 1. Create a virtual environment
+git clone https://github.com/mykytakuzminov/data-structures-and-algorithms.git
+cd data-structures-and-algorithms
+```
+
+### 2. Environment Setup
+
+It is highly recommended to use a virtual environment to keep dependencies isolated. Choose the commands that match your operating system and shell.
+
+#### Windows (PowerShell)
+
+**Create a virtual environment**
+
+```powershell
 python -m venv venv
-
-# 2. Activate the environment
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
 ```
 
-### 2. Running Tests (Quick Start)
+**Activate the environment**
 
-To run unit tests directly using `pytest` (fastest method during active coding):
-
-```bash
-# Run all tests with verbose output
-pytest -v
-
-# Run a specific test module
-pytest tests/test_stack.py
+```powershell
+.\venv\Scripts\Activate.ps1
 ```
 
-### 3. Automation with Tox (Recommended)
+#### macOS / Linux
 
-This project uses `tox` to automate the testing process in isolated environments. This ensures that the code works across different Python versions and passes all quality checks (linting, typing).
-
-**Prerequisite:** Make sure you have compatible Python versions installed (3.14), or `tox` will skip missing interpreters.
+**Create a virtual environment**
 
 ```bash
-# Run the full suite (Tests on all Py versions + Flake8 + MyPy)
+python3 -m venv venv
+```
+
+**Activate the environment**
+
+```bash
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+This project follows modern Python packaging standards. Installing the package in editable mode ensures that any changes you make to the source code are instantly available without needing to reinstall.
+
+**Upgrade pip to the latest version**
+
+```bash
+pip install --upgrade pip
+```
+
+**Install the package in editable mode with development dependencies**
+
+```bash
+pip install -e .
+```
+
+### 4. Running Tests & Quality Control
+
+To maintain high code quality, this project uses **Tox** to automate testing and linting in isolated environments.
+
+**Run everything at once**
+
+```bash
 tox
+```
 
-# Run only code quality checks (faster, no tests)
-tox -e flake8,mypy
+**Run only unit tests**
 
-# Run tests against a specific Python version
-tox -e py312
+```bash
+tox -e py314
+```
+
+**Run only linter (Ruff)**
+
+```bash
+tox -e ruff
+```
+
+**Run only type checking (MyPy)**
+
+```bash
+tox -e mypy
 ```
