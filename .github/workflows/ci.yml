@@ -11,18 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: set up python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.14'
 
-      - name: install dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install tox
+          pip install tox tox-gh-actions
 
-      - name: run test via tox
+      - name: Run tox
         run: tox

@@ -1,5 +1,7 @@
 from __future__ import annotations
-from typing import TypeVar, Generic, Protocol, Any
+
+from typing import Any, Generic, Protocol, TypeVar
+
 from src.data_structures.queues.queue import Queue
 from src.data_structures.stacks.stack import Stack
 

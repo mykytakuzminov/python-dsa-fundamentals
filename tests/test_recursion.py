@@ -1,10 +1,10 @@
 import pytest
 from src.algorithms.recursion.recursion import (
-    recursive_sum,
-    recursive_max,
-    recursive_reverse,
     factorial,
     fibonacci,
+    recursive_max,
+    recursive_reverse,
+    recursive_sum,
     sum_nested_list,
 )
 

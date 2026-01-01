@@ -1,5 +1,6 @@
 from __future__ import annotations
-from typing import TypeVar, Generic, Iterator, Any, Protocol
+
+from typing import Any, Generic, Iterator, Protocol, TypeVar
 
 
 class Comparable(Protocol):

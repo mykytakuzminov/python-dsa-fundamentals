@@ -1,13 +1,12 @@
 import pytest
 from src.algorithms.sorting.sorting import (
     bubble_sort,
+    counting_sort,
     insertion_sort,
-    selection_sort,
     merge_sort,
     quick_sort,
-    counting_sort,
+    selection_sort,
 )
-
 
 # --- Constants ---
 STRING_TEST_CASES = [

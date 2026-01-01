@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data-structures-and-algorithms"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "pytest==8.4.2",
+    "mypy==1.18.2",
+    "ruff==0.9.0",
+    "tox==4.32.0",
+]
+
+[tool.ruff]
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E203"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.14"
+disallow_untyped_defs = true
+ignore_missing_imports = true

@@ -1,5 +1,7 @@
 from __future__ import annotations
-from typing import TypeVar, Generic, Iterator
+
+from typing import Generic, Iterator, TypeVar
+
 from src.data_structures.linked_lists.doubly_linked_list import DoublyLinkedList
 
 T = TypeVar("T")
