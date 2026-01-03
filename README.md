@@ -2,6 +2,7 @@
 
 [![CI Status](https://github.com/mykytakuzminov/data-structures-and-algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/mykytakuzminov/data-structures-and-algorithms/actions)
 ![Python Version](https://img.shields.io/badge/python-3.14-blue.svg)
+![Docker: Ready](https://img.shields.io/badge/docker-ready-2496ed.svg?logo=docker&logoColor=white)
 ![Tests: Pytest](https://img.shields.io/badge/tests-pytest-white.svg?logo=pytest&logoColor=white&labelColor=0a9edc)
 ![Types: MyPy](https://img.shields.io/badge/types-mypy-blue.svg?labelColor=2f4f4f)
 ![Automation: Tox](https://img.shields.io/badge/automation-tox-white.svg?logo=python&logoColor=white&labelColor=ce3262)
@@ -11,16 +12,17 @@
 
 This repository is a high-standard educational ecosystem dedicated to the implementation of classical data structures and algorithms. The project emphasizes **modern software engineering practices**, including strict type safety, comprehensive automation, and clean code architecture.
 
-## 🛠 Engineering Stack
+## 🚀 Engineering Stack
 
 * **[Python 3.14](https://www.python.org/)**: Core language utilizing the latest features and performance improvements.
+* **[Docker](https://www.docker.com/)**: Containerization for environment parity and simplified deployment.
 * **[Pytest](https://docs.pytest.org/)**: Advanced unit testing with heavy use of parametrization.
 * **[MyPy](http://mypy-lang.org/)**: Strict static type checking to enforce architectural integrity.
 * **[Ruff](https://github.com/astral-sh/ruff)**: Ultra-fast linter and formatter for PEP 8 compliance.
 * **[Tox](https://tox.wiki/)**: Multi-environment orchestration for consistent testing.
-* **GitHub Actions**: CI/CD pipeline validating every commit and pull request.
+* **[GitHub Actions](https://github.com/features/actions)**: CI/CD pipeline validating every commit and pull request.
 
-## 🏗 Implementations
+## 📦 Implementations
 
 ### Data Structures
 - [x] **Stack** (LIFO)
@@ -127,3 +129,19 @@ tox -e ruff
 ```bash
 tox -e mypy
 ```
+**
+
+## 🐳 Docker Quick Start (Recommended)
+
+The easiest way to run tests and ensure environment parity is using Docker. You don't need Python or any dependencies installed locally.
+
+### 1. Build the image
+```bash
+docker build -t data-structures-and-algorithms .
+```
+
+### 2. Run the tests
+```bash
+docker run --rm data-structures-and-algorithms
+```
+
