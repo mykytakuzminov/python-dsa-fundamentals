@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Any, Generic, Iterator, Optional, Protocol, TypeVar
 
-from src.data_structures.queues.queue import Queue
-from src.data_structures.stacks.stack import Stack
+from dsa.data_structures.queue import Queue
+from dsa.data_structures.stack import Stack
 
 
 class Comparable(Protocol):
