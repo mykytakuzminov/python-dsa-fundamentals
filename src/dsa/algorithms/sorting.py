@@ -3,6 +3,7 @@ from typing import Any, Protocol, TypeVar
 
 class Comparable(Protocol):
     """Protocol for objects that support comparison operations."""
+
     def __lt__(self, other: Any, /) -> bool: ...
     def __gt__(self, other: Any, /) -> bool: ...
     def __eq__(self, other: object, /) -> bool: ...
@@ -15,7 +16,8 @@ T = TypeVar("T", bound=Comparable)
 
 # --- Comparison Based Sorting Algorithms ---
 
-def bubble_sort(arr: list[T]) -> None:
+
+def bubble_sort[T: Comparable](arr: list[T]) -> None:
     """
     Sorts a list in ascending order using the optimized Bubble Sort algorithm.
 
@@ -44,7 +46,7 @@ def bubble_sort(arr: list[T]) -> None:
             break
 
 
-def insertion_sort(arr: list[T]) -> None:
+def insertion_sort[T: Comparable](arr: list[T]) -> None:
     """
     Sorts a list in ascending order using the Insertion Sort algorithm.
 
@@ -71,7 +73,7 @@ def insertion_sort(arr: list[T]) -> None:
                 break
 
 
-def selection_sort(arr: list[T]) -> None:
+def selection_sort[T: Comparable](arr: list[T]) -> None:
     """
     Sorts a list in ascending order using the Selection Sort algorithm.
 
@@ -99,7 +101,7 @@ def selection_sort(arr: list[T]) -> None:
         arr[i], arr[min_index] = arr[min_index], arr[i]
 
 
-def merge_sort(arr: list[T]) -> None:
+def merge_sort[T: Comparable](arr: list[T]) -> None:
     """
     Sorts a list in ascending order using the Merge Sort algorithm (Divide and Conquer).
 
@@ -123,7 +125,7 @@ def merge_sort(arr: list[T]) -> None:
     _merge_sort_partition(arr, 0, len(arr) - 1)
 
 
-def quick_sort(arr: list[T]) -> None:
+def quick_sort[T: Comparable](arr: list[T]) -> None:
     """
     Sorts a list in ascending order using the Quick Sort algorithm (Divide and Conquer).
 
@@ -152,6 +154,7 @@ def quick_sort(arr: list[T]) -> None:
 
 
 # --- Non-Comparison Based Sorting Algorithms ---
+
 
 def counting_sort(arr: list[int]) -> None:
     """
@@ -194,7 +197,10 @@ def counting_sort(arr: list[int]) -> None:
 
 # --- Private Helpers ---
 
-def _merge_sort_helper(arr: list[T], left: int, mid: int, right: int) -> None:
+
+def _merge_sort_helper[T: Comparable](
+    arr: list[T], left: int, mid: int, right: int
+) -> None:
     """
     Combines two already sorted sub-arrays into a single sorted sub-array.
 
@@ -238,7 +244,7 @@ def _merge_sort_helper(arr: list[T], left: int, mid: int, right: int) -> None:
         curr += 1
 
 
-def _merge_sort_partition(arr: list[T], left: int, right: int) -> None:
+def _merge_sort_partition[T: Comparable](arr: list[T], left: int, right: int) -> None:
     """
     The recursive core function for the Merge Sort algorithm (Divide step).
 
@@ -261,7 +267,7 @@ def _merge_sort_partition(arr: list[T], left: int, right: int) -> None:
         _merge_sort_helper(arr, left, mid, right)
 
 
-def _quick_sort_helper(arr: list[T], left: int, right: int) -> None:
+def _quick_sort_helper[T: Comparable](arr: list[T], left: int, right: int) -> None:
     """
     The recursive core function for the Quick Sort algorithm.
 
@@ -279,7 +285,7 @@ def _quick_sort_helper(arr: list[T], left: int, right: int) -> None:
         _quick_sort_helper(arr, pi + 1, right)
 
 
-def _quick_sort_partition(arr: list[T], left: int, right: int) -> int:
+def _quick_sort_partition[T: Comparable](arr: list[T], left: int, right: int) -> int:
     """
     Partitions the sub-array arr[l...r] around a pivot element.
 

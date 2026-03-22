@@ -1,20 +1,24 @@
 from __future__ import annotations
 
-from typing import Any, Generic, Iterator, Optional, Protocol, TypeVar
+from collections.abc import Iterator
+from typing import Any, Protocol, TypeVar
 
-from dsa.data_structures.queue import Queue
-from dsa.data_structures.stack import Stack
+from .queue import Queue
+from .stack import Stack
 
 
 class Comparable(Protocol):
-    def __lt__(self, other: Any) -> bool: ...
-    def __gt__(self, other: Any) -> bool: ...
+    def __lt__(self, other: Any, /) -> bool: ...
+    def __gt__(self, other: Any, /) -> bool: ...
+    def __le__(self, other: Any, /) -> bool: ...
+    def __ge__(self, other: Any, /) -> bool: ...
+    def __eq__(self, other: object, /) -> bool: ...
 
 
 T = TypeVar("T", bound=Comparable)
 
 
-class Node(Generic[T]):
+class Node[T: Comparable]:
     """
     Represents a node in a Binary Search Tree.
 
@@ -23,9 +27,10 @@ class Node(Generic[T]):
         left: Reference to the left child node (smaller values).
         right: Reference to the right child node (larger values).
     """
+
     value: T
-    left: Optional[Node[T]]
-    right: Optional[Node[T]]
+    left: Node[T] | None
+    right: Node[T] | None
 
     def __init__(self, value: T) -> None:
         """Initialize a tree node."""
@@ -38,14 +43,15 @@ class Node(Generic[T]):
         return f"Node({self.value})"
 
 
-class BinarySearchTree(Generic[T]):
+class BinarySearchTree[T: Comparable]:
     """
     Binary Search Tree (BST) implementation.
 
     Attributes:
         _root: The top-level node of the tree.
     """
-    _root: Optional[Node[T]]
+
+    _root: Node[T] | None
 
     def __init__(self) -> None:
         """Initialize an empty Binary Search Tree."""
@@ -138,7 +144,7 @@ class BinarySearchTree(Generic[T]):
 
         stack: Stack[Node[T]] = Stack()
         stack.push(self._root)
-        result = []
+        result: list[T] = []
 
         while not stack.is_empty:
             node = stack.pop()
@@ -166,7 +172,7 @@ class BinarySearchTree(Generic[T]):
             A list of values in postorder sequence.
         """
         stack: Stack[Node[T]] = Stack()
-        result = []
+        result: list[T] = []
         current = self._root
         last_visited = None
 
@@ -198,7 +204,7 @@ class BinarySearchTree(Generic[T]):
 
         queue: Queue[Node[T]] = Queue()
         queue.enqueue(self._root)
-        result = []
+        result: list[T] = []
 
         while not queue.is_empty:
             node = queue.dequeue()
@@ -224,13 +230,13 @@ class BinarySearchTree(Generic[T]):
             else:
                 self._insert_recursive(node.right, value)
 
-    def _height(self, node: Optional[Node[T]]) -> int:
+    def _height(self, node: Node[T] | None) -> int:
         """Helper to recursively calculate the depth of the tree."""
         if node is None:
             return 0
         return 1 + max(self._height(node.left), self._height(node.right))
 
-    def _size(self, node: Optional[Node[T]]) -> int:
+    def _size(self, node: Node[T] | None) -> int:
         """Helper to recursively count nodes."""
         if node is None:
             return 0
