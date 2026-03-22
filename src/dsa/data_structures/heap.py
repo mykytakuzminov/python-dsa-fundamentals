@@ -188,7 +188,7 @@ class MaxHeap(Heap[T]):
         return val1 > val2
 
 
-class tMinHeap(Heap[T]):
+class MinHeap(Heap[T]):
     """Min-Heap implementation where the smallest element is at the root."""
 
     def _is_better(self, val1: T, val2: T) -> bool:
