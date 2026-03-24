@@ -14,6 +14,7 @@ class DynamicArray[T]:
         _capacity: The current allocated size of the internal list.
         _list: The internal fixed-size list holding elements.
     """
+
     _size: int
     _capacity: int
     _list: list[T | None]
@@ -65,7 +66,7 @@ class DynamicArray[T]:
 
     def __repr__(self) -> str:
         """Return a developer-friendly string representation."""
-        return f"DynamicArray({self._list[:self._size]})"
+        return f"DynamicArray({self._list[: self._size]})"
 
     def __str__(self) -> str:
         """Return a readable string representation of the array."""
@@ -189,7 +190,9 @@ class DynamicArray[T]:
             IndexError: If the index is negative or >= _size.
         """
         if index < 0 or index >= self._size:
-            raise IndexError(f"Index {index} is out of bounds for array of size {self._size}")
+            raise IndexError(
+                f"Index {index} is out of bounds for array of size {self._size}"
+            )
 
     def _check_insert_index(self, index: int) -> None:
         """
@@ -204,4 +207,6 @@ class DynamicArray[T]:
             IndexError: If the index is negative or > _size.
         """
         if index < 0 or index > self._size:
-            raise IndexError(f"Index {index} is out of bounds for array of size {self._size}")
+            raise IndexError(
+                f"Index {index} is out of bounds for array of size {self._size}"
+            )
