@@ -13,6 +13,7 @@
 
 | Structure | Description |
 |---|---|
+| Dynamic Array | Growable array backed by a fixed-size list |
 | Stack | LIFO — backed by dynamic array |
 | Queue | FIFO — backed by doubly linked list |
 | Singly Linked List | Classic node-pointer traversal |
