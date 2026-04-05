@@ -1,11 +1,12 @@
 # Python DSA Core
 
-[![CI](https://github.com/mykytakuzminov/python-dsa-core/actions/workflows/ci.yml/badge.svg)](https://github.com/mykytakuzminov/python-dsa-core/actions)
-![Python](https://img.shields.io/badge/python-3.14-3776ab?logo=python&logoColor=white)
-![uv](https://img.shields.io/badge/uv-package%20manager-de5fe9)
-![mypy](https://img.shields.io/badge/mypy-strict-2a6db5)
-![ruff](https://img.shields.io/badge/ruff-linter-d7ff64?logoColor=black)
-![tox](https://img.shields.io/badge/tox-automation-ce3262?logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3B6D11?logo=python&logoColor=fff)
+![Uv](https://img.shields.io/badge/Uv-D85A30?logo=uv&logoColor=fff)
+![Mypy](https://img.shields.io/badge/Mypy-0C447C?logo=python&logoColor=fff)
+![Ruff](https://img.shields.io/badge/Ruff-A32D2D?logo=ruff&logoColor=fff)
+![Tox](https://img.shields.io/badge/Tox-3C3489?logo=python&logoColor=fff)
+![Pytest](https://img.shields.io/badge/Pytest-085041?logo=pytest&logoColor=fff)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-185FA5?logo=github-actions&logoColor=fff)
 
 > Hand-crafted implementations of classical data structures and algorithms in Python — built with strict typing, clean architecture, and modern tooling.
 > 
