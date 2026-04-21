@@ -38,7 +38,7 @@ Built with a production-grade Python toolchain:
 - **[mypy](http://mypy-lang.org/)** — strict static type checking across the entire codebase
 - **[ruff](https://github.com/astral-sh/ruff)** — linting and formatting in one tool
 - **[tox](https://tox.wiki/)** — automated testing across isolated environments
-- **[pytest](https://docs.pytest.org/)** — 246 tests with parametrization and fixtures
+- **[pytest](https://docs.pytest.org/)** — 293 tests with parametrization and fixtures
 - **[github actions](https://github.com/features/actions)** — CI on every push and pull request
 
 ## 🚀 Getting Started
